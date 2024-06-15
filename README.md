@@ -1,2 +1,2 @@
 # Xlsx data remover
-<h1 style="color:'red'">iykyk</h1>
+<h1 style="color:red">iykyk</h1>
